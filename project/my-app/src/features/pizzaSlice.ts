@@ -1,14 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface PizzaState {
-  value: object[];
-}
-
-const initialState: PizzaState = {
+const initialState = {
   value: [
-    { name: "Margarita", price: 12 },
-    { name: "Peperoni", price: 15 },
-    { name: "Cheeses", price: 14 },
+    { pizzaName: "Margarita", price: 12 },
+    { pizzaName: "Peperoni", price: 15 },
+    { pizzaName: "Cheeses", price: 14 },
   ],
 };
 
@@ -16,10 +12,12 @@ export const pizzaSlice = createSlice({
   name: "pizza",
   initialState,
   reducers: {
-    buyPizza: (state, action: PayloadAction<object>) => {
-        state.value.push(action.payload)
+    addPizza: (state, action: PayloadAction<{pizzaName:string; price:number}>) => {
+
+      state.value.push(action.payload);
     },
   },
 });
 
+export const { addPizza } = pizzaSlice.actions;
 export default pizzaSlice.reducer;
