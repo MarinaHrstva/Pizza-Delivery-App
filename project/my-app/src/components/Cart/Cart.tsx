@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import { removeFromTheCart } from "../../features/cartSlice";
 
-const Cart = () => {
+function Cart  ()  {
     const dispatch = useDispatch()
     const cart = useSelector((state: RootState) => state.cart.value);
 
     function removePizza(index: number) {
         dispatch(removeFromTheCart(index))
-
     }
 
     return (
