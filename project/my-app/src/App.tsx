@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-import AddPizza from './components/AddPizza/AddPizza';
-import PizzaMenu from './components/PizzaMenu/PizzaMenu';
+import "./App.css";
+import Cart from "./components/Cart/Cart";
+import PizzaMenu from "./components/PizzaMenu/PizzaMenu";
 
 function App() {
-	return (
-		<div className="App">
-			<PizzaMenu/>
-			<AddPizza />
-		</div>
-	);
+  return (
+    <div className="App">
+      <PizzaMenu />
+	  <Cart/>
+    </div>
+  );
 }
 
 export default App;
