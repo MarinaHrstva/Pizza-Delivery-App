@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { pizzaType } from "../components/Card/Card";
+import pizzaType from "../Types/pizzaType";
 
 
 interface initialStateType {

@@ -7,19 +7,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToTheCart } from '../../features/cartSlice';
+import pizzaType from '../../Types/pizzaType';
 
-export interface pizzaType {
-	pizzaName: string;
-	price: number;
-}
 
 function ImgMediaCard({ pizzaName, price }: pizzaType): JSX.Element {
 
 	const dispatch = useDispatch();
-	
+
 	function addPizzaToTheCart(): void {
-		dispatch(addToTheCart({pizzaName,price}))
-		
+		dispatch(addToTheCart({ pizzaName, price }))
+
 	}
 
 	return (

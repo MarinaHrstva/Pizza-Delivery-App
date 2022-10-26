@@ -1,12 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { pizzaType } from "../components/Card/Card";
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import pizzaType from "../Types/pizzaType";
 
-interface initialStateType{
-	value: pizzaType[]
+interface initialStateType {
+	isLoading?: boolean;
+	pizzas: pizzaType[];
+	error?: string;
 }
 
-const initialState:initialStateType = {
-	value: [
+const initialState: initialStateType = {
+	pizzas: [
 		{ pizzaName: "Margarita", price: 12 },
 		{ pizzaName: "Peperoni", price: 15 },
 		{ pizzaName: "Cheeses", price: 14 },
@@ -21,7 +23,7 @@ export const pizzaSlice = createSlice({
 			state,
 			action: PayloadAction<{ pizzaName: string; price: number }>
 		) => {
-			state.value.push(action.payload);
+			state.pizzas.push(action.payload);
 		},
 	},
 });
