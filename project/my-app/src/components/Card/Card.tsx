@@ -1,22 +1,21 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToTheCart } from '../../features/cartSlice';
-import pizzaType from '../../Types/pizzaType';
+import React from "react";
 
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
+import { useDispatch } from "react-redux";
+import { addToTheCart } from "../../features/cartSlice";
+import pizzaType from "../../Types/pizzaType";
 
 function ImgMediaCard({ pizzaName, price }: pizzaType): JSX.Element {
-
 	const dispatch = useDispatch();
 
 	function addPizzaToTheCart(): void {
-		dispatch(addToTheCart({ pizzaName, price }))
-
+		dispatch(addToTheCart({ pizzaName, price }));
 	}
 
 	return (
@@ -36,7 +35,9 @@ function ImgMediaCard({ pizzaName, price }: pizzaType): JSX.Element {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button size="small" onClick={addPizzaToTheCart}>Add To Cart</Button>
+				<Button size="small" onClick={addPizzaToTheCart}>
+					Add To Cart
+				</Button>
 			</CardActions>
 		</Card>
 	);
